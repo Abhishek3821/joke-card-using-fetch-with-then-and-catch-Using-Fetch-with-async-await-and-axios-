@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./jokes_cards.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="heading">
+            <center><h1>joke_cards</h1></center>
+        </div>
+        <div class="joke">
+            <h3 id="first"></h3>
+            <h3 id="second"></h3>
+        </div>
+        <button>Refresh Me</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+       /*  let url="https://catfact.ninja/fact";
+        fetch(url,{
+            headers:{
+                accept: 'application/json'
+              }
+        })
+        .then((res)=>{
+            console.log("succesfull")
+            console.log(res);
+            return res.json();
+        })
+        .then((data)=>{
+            let cat=data.fact;
+            console.log(cat);
+            document.querySelector("h3").innerHTML=cat
+        })*/
+         
+        /*let url="https://catfact.ninja/fact";
+        async function getdata(){
+            let data=await fetch(url)
+            console.log(data)
+            let res=await data.json();
+            let final=(res.fact)
+            document.querySelector("h3").innerHTML=final;
+        }
+getdata();*/
+let url="https://v2.jokeapi.dev/joke/Any?safe-mode";
+        async function getdata(){
+            let data=await axios.get(url) 
+            console.log(data);
+           if(data.data.joke){
+            let result=data.data.joke;
+            document.getElementById("first").innerHTML= result ||"";
+           }
+           else{
+            let set=data.data.setup;
+            document.getElementById("first").innerHTML= set || "";
+            let dil=data.data.delivery;
+            document.getElementById("second").innerHTML= dil || "";
+            
+            
+           }
+        }
+    getdata();
+    document.querySelector("button").addEventListener("click",()=>{
+        getdata();
+    });
+</script>

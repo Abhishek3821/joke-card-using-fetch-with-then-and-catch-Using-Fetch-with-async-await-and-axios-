@@ -1,0 +1,39 @@
+body{
+    background-color: aquamarine;
+    height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background-image: url(./pngtree-a-cluster-of-cheerful-yellow-emojis-in-3d-render-laughing-and-picture-image_3750226\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+.cont{
+    /* border: 2px solid black; */
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+    color: black;
+    margin-top: 60px;
+}
+.heading{
+    /* border: 2px solid black; */
+    font-size: larger;
+    color: rgb(19, 11, 11);
+    margin: 10px;
+}
+.joke{
+    
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: x-large;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+button{
+    font-size: medium;
+    border-radius: 5px;
+}
